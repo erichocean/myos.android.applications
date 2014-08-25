@@ -5,34 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>F6044990-D82E-417C-82AC-86362438F07F</string>
+	<string>7AD6F708-50E4-4797-99ED-6C891D548FBA</string>
 	<key>IDESourceControlProjectName</key>
 	<string>applications</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>932674B2-DCB5-4755-AF39-8FEBE5568B6E</key>
-		<string>ssh://github.com/amraboelela/myos.android.applications</string>
+		<key>817936C0-E2D3-481A-B423-AEC073C8B359</key>
+		<string>https://github.com/amraboelela/myos.android.applications.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>applications.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>932674B2-DCB5-4755-AF39-8FEBE5568B6E</key>
+		<key>817936C0-E2D3-481A-B423-AEC073C8B359</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://github.com/amraboelela/myos.android.applications</string>
+	<string>https://github.com/amraboelela/myos.android.applications.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>932674B2-DCB5-4755-AF39-8FEBE5568B6E</string>
+	<string>817936C0-E2D3-481A-B423-AEC073C8B359</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>932674B2-DCB5-4755-AF39-8FEBE5568B6E</string>
+			<string>817936C0-E2D3-481A-B423-AEC073C8B359</string>
 			<key>IDESourceControlWCCName</key>
 			<string>applications</string>
 		</dict>
