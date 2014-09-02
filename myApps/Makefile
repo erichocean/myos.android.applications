@@ -2,7 +2,7 @@
 # Copyright 2014 myOS Group. All rights reserved.
 #
 
-LIB_NAME=MyApps
+LIB_NAME=myApps
 CFLAGS=-DDEBUG -DML -fblocks
 LDLIBS=-llog -landroid -lCoreFoundation -lFoundation -lNAUIKit -lNAIOKit -lNAOpenGLES
 

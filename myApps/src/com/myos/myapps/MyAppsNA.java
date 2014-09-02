@@ -16,7 +16,7 @@
 
 package com.myos.myapps;
 
-public class MyAppsNA extends android.app.NativeActivity {
+public class myAppsNA extends android.app.NativeActivity {
     
     static {
         System.loadLibrary("CoreFoundation");
@@ -27,6 +27,6 @@ public class MyAppsNA extends android.app.NativeActivity {
         System.loadLibrary("NAOpenGLES");
         System.loadLibrary("NACoreAnimation");
         System.loadLibrary("NAUIKit");
-        System.loadLibrary("MyApps");
+        System.loadLibrary("myApps");
     }
 }

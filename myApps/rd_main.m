@@ -8,5 +8,5 @@
 void android_main(struct android_app *state)
 {
     app_dummy();
-    _UIApplicationMain(state, @"MyApps", @"AppDelegate");
+    _UIApplicationMain(state, @"myApps", @"AppDelegate");
 }

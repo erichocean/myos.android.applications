@@ -1,7 +1,7 @@
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := MyApps
-LOCAL_SRC_FILES := $(MY_APPLICATIONS_PATH)/MyApps/libMyApps.so
+LOCAL_MODULE := myApps
+LOCAL_SRC_FILES := $(MY_APPLICATIONS_PATH)/myApps/libmyApps.so
 include $(PREBUILT_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)

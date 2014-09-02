@@ -1,2 +1,2 @@
-/Users/amraboelela/develop/myos/android/applications/MyApps/bin/AndroidManifest.xml : \
-/Users/amraboelela/develop/myos/android/applications/MyApps/AndroidManifest.xml \
+/Users/amraboelela/develop/myos/android/applications/myApps/bin/AndroidManifest.xml : \
+/Users/amraboelela/develop/myos/android/applications/myApps/AndroidManifest.xml \
