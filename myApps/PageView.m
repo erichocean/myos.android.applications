@@ -36,7 +36,8 @@
                 if (application != [NSNull null]) {
                     //DLog(@"application: %@", application);
                     UIView *icon = application->_applicationIcon;
-                    icon.frame = CGRectMake(_kIconWidth * application.xLocation, _kIconHeight * application.yLocation,
+                    icon.frame = CGRectMake(_kIconWidth * application.xLocation,
+                                            self.frame.size.height - _kIconHeight * application.yLocation - icon.frame.size.height,
                                             icon.frame.size.width, icon.frame.size.height);
                     [self addSubview:icon];
                 }

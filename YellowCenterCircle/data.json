@@ -2,10 +2,10 @@
     "page" : {
         "pageNumber": 0,
         "xLocation": 0,
-        "yLocation": 2,
+        "yLocation": 0,
         "anchored": 0
     }
     "application" : {
-        "score": 0
+        "score": -1
     }
 }
