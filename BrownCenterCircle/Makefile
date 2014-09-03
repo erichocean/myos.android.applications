@@ -2,7 +2,7 @@
 # Copyright 2014 myOS Group. All rights reserved.
 #
 
-APP_NAME=RedRectangle
+APP_NAME=BrownCenterCircle
 CFLAGS=-DDEBUG -fblocks
 LDLIBS= -llog -lCoreFoundation -lFoundation -lOpenGLES -lUIKit
 OBJECTS = \
