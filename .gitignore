@@ -1,3 +1,5 @@
 xcuserdata
 *.so
 bin
+gen
+local.properties
