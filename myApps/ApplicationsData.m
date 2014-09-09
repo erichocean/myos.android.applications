@@ -8,9 +8,138 @@
 #import "ApplicationsPage.h"
 #import "FileManager.h"
 
+#define kMaximumNumberOfPages   10
+#define kNumberOfAppsPerRowPage 4
+#define kNumberOfAppsPerPage    kNumberOfAppsPerRowPage * 6
+#define kMaximumNumberOfApps    kNumberOfAppsPerPage * kMaximumNumberOfPages
+
 static ApplicationsData *_applicationsData = nil;
 static NSString *const _kMAPageNumber = @"pageNumber";
- 
+
+#pragma mark - Static functions
+
+static int ApplicationsDataAppFlatLocation(UIMAApplication *application)
+{
+    return application.pageNumber * kNumberOfAppsPerPage + application.yLocation * kNumberOfAppsPerRowPage +  application.xLocation;;
+}
+
+static UIMAApplication *ApplicationsDataGetCloseDownAppToFlatLocation(ApplicationsData *applicationsData, int flatLocation)
+{
+    NSSortDescriptor *pageNumberDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"pageNumber" ascending:NO];
+    NSSortDescriptor *yLocationDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"yLocation" ascending:NO];
+    NSSortDescriptor *xLocationDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"xLocation" ascending:NO];
+    NSMutableArray *applications = [applicationsData->_applications sortedArrayUsingDescriptors:[NSArray arrayWithObjects:pageNumberDescriptor, yLocationDescriptor, xLocationDescriptor, nil]];
+    DLog(@"applications: %@", applications);
+    for (UIMAApplication *application in applications) {
+        if (ApplicationsDataAppFlatLocation(application) <= flatLocation) {
+            return application;
+        }
+    }
+    return nil;
+}
+
+static int ApplicationsDataSetLocations(ApplicationsData *applicationsData)
+{
+    DLog(@"applicationsData->_applications: %@", applicationsData->_applications);
+    NSSortDescriptor *anchoredDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"anchored" ascending:NO];
+    NSSortDescriptor *scoreDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"score" ascending:YES];
+    applicationsData.applications = [applicationsData->_applications sortedArrayUsingDescriptors:[NSArray arrayWithObjects:anchoredDescriptor, scoreDescriptor, nil]];
+    DLog(@"_applications: %@", applicationsData->_applications);
+    int allocSize = sizeof(BOOL)*kMaximumNumberOfApps;
+    BOOL *filledLocations = malloc(allocSize);
+    memset(filledLocations,NO,allocSize);
+    int currentLocation = 0;
+    int minusOneIndex = -1;
+    //int i;
+    int flatLocation;
+    UIMAApplication *application;
+    for (int i=0; i<applicationsData->_applications.count; i++) {
+        application = [applicationsData->_applications objectAtIndex:i];
+        DLog(@"application: %@", application);
+        if (application.anchored) {
+            flatLocation = ApplicationsDataAppFlatLocation(application);
+            filledLocations[flatLocation] = YES;
+        } else if (application.score > -1) {
+            //break;
+            while (filledLocations[currentLocation]) {
+                currentLocation++;
+            }
+            filledLocations[currentLocation] = YES;
+            application.pageNumber = currentLocation / kNumberOfAppsPerPage;
+            application.yLocation = (currentLocation % kNumberOfAppsPerPage) / kNumberOfAppsPerRowPage;
+            application.xLocation = (currentLocation % kNumberOfAppsPerPage) % kNumberOfAppsPerRowPage;
+        } else {
+            minusOneIndex = i;
+        }
+        currentLocation++;
+    }
+    free(filledLocations);
+    return minusOneIndex;
+}
+
+static void ApplicationsDataAutoArrange(ApplicationsData *applicationsData)
+{
+    int minusOneIndex = ApplicationsDataSetLocations(applicationsData);
+    /*DLog(@"applicationsData->_applications: %@", applicationsData->_applications);
+    NSSortDescriptor *anchoredDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"anchored" ascending:NO];
+    NSSortDescriptor *scoreDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"score" ascending:YES];
+    NSMutableArray *applications = [applicationsData->_applications sortedArrayUsingDescriptors:[NSArray arrayWithObjects:anchoredDescriptor, scoreDescriptor, nil]];
+    DLog(@"_applications: %@", _applications);
+    int allocSize = sizeof(BOOL)*kMaximumNumberOfApps;
+    BOOL filledLocations = malloc(allocSize);
+    memset(filledLocations,NO,allocSize);
+    int currentLocation = 0;
+    int minusOneIndex = applications.count;
+    int i;
+    int flatLocation;
+    UIMAApplication *application;
+    for (i=0; i<applications.count; i++) {
+        application = [applications objectAtIndex:i];
+        DLog(@"application: %@", application);
+        if (application.anchored) {
+            flatLocation = ApplicationsDataAppFlatLocation(application);
+            filledLocations[flatLocation] = YES;
+        } else if (application.score > -1) {
+            //break;
+            while (filledLocations[currentLocation]) {
+                currentLocation++;
+            }
+            filledLocations[currentLocation] = YES;
+            application.pageNumber = currentLocation / kNumberOfAppsPerPage;
+            application.yLocation = (currentLocation % kNumberOfAppsPerPage) / kNumberOfAppsPerRowPage;
+            application.xLocation = (currentLocation % kNumberOfAppsPerPage) % kNumberOfAppsPerRowPage;
+        } else {
+            minusOneIndex = i;
+        }
+        currentLocation++;
+    }*/
+    if (minusOneIndex==-1) {
+        return;
+    }
+    DLog(@"for (i=minusOneIndex ...");
+    int flatLocation = kNumberOfAppsPerPage-1;
+    UIMAApplication *application = ApplicationsDataGetCloseDownAppToFlatLocation(applicationsData, flatLocation);
+    int appFlatLocation = ApplicationsDataAppFlatLocation(application);
+    int newAppScore;
+    if (appFlatLocation < flatLocation) {
+        newAppScore = application.score - 1;
+    } else {
+        newAppScore = application.score + 1;
+    }
+    //BOOL
+    for (int i=minusOneIndex; i<applicationsData->_applications.count; i++) {
+        application = [applicationsData->_applications objectAtIndex:i];
+        if (application.score == -1) {
+            DLog(@"application: %@", application);
+            application.score = newAppScore;
+        } else {
+            break;
+        }
+        //currentLocation++;
+    }
+    ApplicationsDataSetLocations(applicationsData);
+}
+
 @implementation ApplicationsData
 
 @synthesize applications=_applications;
@@ -27,13 +156,14 @@ static NSString *const _kMAPageNumber = @"pageNumber";
 {
     if ((self=[super init])) {
         _applications = FileManagerInstantiateApps();
+        ApplicationsDataAutoArrange(self);
         //DLog();
         NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"pageNumber" ascending:YES];
         //DLog(@"_applications: %@", _applications);
         self.applications = [_applications sortedArrayUsingDescriptors:[NSArray arrayWithObject:descriptor]];
         //DLog(@"_applications: %@", _applications);
-        UIMAApplication *lastApplicatyion = [_applications lastObject];
-        int lastPageNumber = lastApplicatyion.pageNumber;
+        UIMAApplication *lastApplication = [_applications lastObject];
+        int lastPageNumber = lastApplication.pageNumber;
         int numberOfPages = lastPageNumber + 1;
         //DLog(@"numberOfPages: %d", numberOfPages);
         
