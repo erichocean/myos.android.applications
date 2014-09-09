@@ -23,7 +23,7 @@
     float y = (frame.size.height - height) / 2.0;
     ImagesView *images = [[[ImagesView alloc] initWithFrame:CGRectMake(x,y,width,height)] autorelease];
     [self.window addSubview:images];
-    DLog(@"images: %@", images);
+    //DLog(@"images: %@", images);
     [self.window makeKeyAndVisible];
     
     return YES;

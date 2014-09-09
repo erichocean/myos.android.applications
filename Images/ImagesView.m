@@ -28,7 +28,7 @@ static CGImageRef png, jpeg, tiff;
 
 - (void)drawRect:(CGRect)rect
 {
-    DLog(@"rect: %@", NSStringFromCGRect(rect));
+    //DLog(@"rect: %@", NSStringFromCGRect(rect));
     CGContextRef ctx = UIGraphicsGetCurrentContext();
 //    CGContextScaleCTM(ctx, 2, 2);
 
@@ -49,7 +49,7 @@ static CGImageRef png, jpeg, tiff;
     CGDataProviderRef pngData = CGDataProviderCreateWithFilename("sunglass.png");
     //DLog(@"pngData: %@", pngData);
     png = CGImageCreateWithPNGDataProvider(pngData, NULL, YES, kCGRenderingIntentDefault);
-    DLog(@"png: %@", png);
+    //DLog(@"png: %@", png);
     CGDataProviderRelease(pngData);
     //}
     //DLog(@"png: %@", png);
