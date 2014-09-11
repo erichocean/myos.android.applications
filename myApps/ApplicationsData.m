@@ -29,7 +29,7 @@ static UIMAApplication *ApplicationsDataGetCloseDownAppToFlatLocation(Applicatio
     NSSortDescriptor *yLocationDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"yLocation" ascending:NO];
     NSSortDescriptor *xLocationDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"xLocation" ascending:NO];
     NSMutableArray *applications = [applicationsData->_applications sortedArrayUsingDescriptors:[NSArray arrayWithObjects:pageNumberDescriptor, yLocationDescriptor, xLocationDescriptor, nil]];
-    DLog(@"pageNumber, yLocation, xLocation sorted applications: %@", applications);
+    //DLog(@"pageNumber, yLocation, xLocation sorted applications: %@", applications);
     for (UIMAApplication *application in applications) {
         if (ApplicationsDataAppFlatLocation(application) <= flatLocation) {
             return application;
@@ -65,12 +65,12 @@ static int ApplicationsDataSetLocations(ApplicationsData *applicationsData)
             while (filledLocations[currentLocation]) {
                 currentLocation++;
             }
-            DLog(@"currentLocation: %d", currentLocation);
+            //DLog(@"currentLocation: %d", currentLocation);
             filledLocations[currentLocation] = YES;
             application.pageNumber = currentLocation / kNumberOfAppsPerPage;
             application.yLocation = (currentLocation % kNumberOfAppsPerPage) / kNumberOfAppsPerRow;
             application.xLocation = (currentLocation % kNumberOfAppsPerPage) % kNumberOfAppsPerRow;
-            DLog(@"set application: %@", application);
+            //DLog(@"set application: %@", application);
             currentLocation++;
         } else {
             minusOneIndex = i;
@@ -83,7 +83,7 @@ static int ApplicationsDataSetLocations(ApplicationsData *applicationsData)
 static void ApplicationsDataAutoArrange(ApplicationsData *applicationsData)
 {
     int minusOneIndex = ApplicationsDataSetLocations(applicationsData);
-    DLog(@"minusOneIndex: %d", minusOneIndex);
+    //DLog(@"minusOneIndex: %d", minusOneIndex);
     /*DLog(@"applicationsData->_applications: %@", applicationsData->_applications);
     NSSortDescriptor *anchoredDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"anchored" ascending:NO];
     NSSortDescriptor *scoreDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"score" ascending:YES];
@@ -120,7 +120,7 @@ static void ApplicationsDataAutoArrange(ApplicationsData *applicationsData)
     if (minusOneIndex==-1) {
         return;
     }
-    DLog(@"for (i=minusOneIndex ...");
+    //DLog(@"for (i=minusOneIndex ...");
     int flatLocation = kNumberOfAppsPerPage-1;
     UIMAApplication *application = ApplicationsDataGetCloseDownAppToFlatLocation(applicationsData, flatLocation);
     int appFlatLocation = ApplicationsDataAppFlatLocation(application);
@@ -134,7 +134,7 @@ static void ApplicationsDataAutoArrange(ApplicationsData *applicationsData)
     for (int i=minusOneIndex; i<applicationsData->_applications.count; i++) {
         application = [applicationsData->_applications objectAtIndex:i];
         if (application.score == -1) {
-            DLog(@"application: %@", application);
+            //DLog(@"application: %@", application);
             application.score = newAppScore;
         } else {
             break;
