@@ -2,6 +2,11 @@
 
 Applications to run over myOS frameworks for android, including myApps
 
+* Depends on:
+  * [myos.android.libraries](https://github.com/amraboelela/myos.android.libraries)
+  * [myos.android.frameworks](https://github.com/amraboelela/myos.android.frameworks)
+  * [myos.android.sdk](https://github.com/amraboelela/myos.android.sdk)
+  
 * Add MYOS_PATH line to ~/.bash_profile, example:
 
         export MYOS_PATH=~/develop/myos
