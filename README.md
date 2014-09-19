@@ -9,7 +9,7 @@ Applications to run over myOS frameworks for android, including myApps
   
 * Add MYOS_PATH line to ~/.bash_profile, example:
 
-        export MYOS_PATH=~/develop/myos
+        export MYOS_PATH=~/myos
         
 * Clone or fork myos.android.applications repo into path myos/android/applications
 * For more info:
