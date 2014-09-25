@@ -10,4 +10,4 @@ OBJECTS = \
     AppDelegate.o \
     GradientsView.o \
 
-include ${MY_FRAMEWORKS_PATH}/resources/makefile-executable
+include ${MYOS_PATH}/android/sdk/resources/makefile-executable

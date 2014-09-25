@@ -5,4 +5,4 @@
 CAN_CLEAN=YES
 
 TARGET=myOSApplication
-source ${MY_FRAMEWORKS_PATH}/resources/nativeApp-install.sh
+source ${MYOS_PATH}/android/sdk/scripts/nativeApp-install.sh
