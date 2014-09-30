@@ -71,6 +71,7 @@
 				F526F7D019B6753400A32D8E /* RedCenterCircle */,
 				F526F7D119B6753400A32D8E /* RedCenterRectangle */,
 				F526F7D219B6753400A32D8E /* RedCircle */,
+				4C2681F918BE81C800124602 /* RedRectangle */,
 				F526F7D419B6753400A32D8E /* YellowCenterCircle */,
 				F526F7D519B6753400A32D8E /* YellowCenterRectangle */,
 				F526F7D619B6753400A32D8E /* YellowCircle */,
@@ -80,7 +81,6 @@
 				4C2681F718BE81C800124602 /* Console */,
 				C52A7B6418F3A7E5005E9FE5 /* Gradients */,
 				C5B8DD4819313E5C003B22FE /* Images */,
-				4C2681F918BE81C800124602 /* RedRectangle */,
 			);
 			sourceTree = "<group>";
 		};
