@@ -32,6 +32,11 @@
     return YES;
 }
 
+- (void)applicationWillEnterForeground:(UIApplication *)application
+{
+    DLog();
+}
+
 - (void)dealloc
 {
     [_window release];
