@@ -17,21 +17,15 @@
     //DLog();
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     //DLog(@"window: %@", window);
-    self.window.backgroundColor = [UIColor brownColor];
+    self.window.backgroundColor = [UIColor whiteColor];
     //DLog(@"self.window.backgroundColor: %@", self.window.backgroundColor);
-//    UITextField* display = [[[UITextField alloc] initWithFrame:CGRectMake(10, 20, 70, 30)] autorelease];
-//        [display setEditable: NO];
-//    [display setBackgroundColor:[UIColor blueColor]];
-    //[display setDrawsBackground: YES];
-//        [display setAlignment: NSRightTextAlignment];
-
-//    display.text = @"Red Rectangle";
-//    [window addSubview: display];
-
-    RectangleView *solidView = [[[RectangleView alloc] initWithFrame:CGRectMake(0, 40, 170, 150)] autorelease];
+    
+    CGRect screenBounds = [[UIScreen mainScreen] bounds];
+    RectangleView *rectangleView = [[[RectangleView alloc] initWithFrame:CGRectMake((screenBounds.size.width - kRectangleWidth) / 2, (screenBounds.size.height - kRectangleHeight) / 2.0, kRectangleWidth, kRectangleHeight)] autorelease];
+    
     //DLog(@"solidView: %@", solidView);
     //solidView.backgroundColor = [UIColor redColor];
-    [self.window addSubview:solidView];
+    [self.window addSubview:rectangleView];
     
     //[NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(addSolidView:) userInfo:nil repeats:NO];
     [self.window makeKeyAndVisible];
@@ -48,13 +42,5 @@
 }
 
 #pragma mark - Delegates
-
-- (void)addSolidView:(NSTimer *)timer
-{
-    RectangleView *solidView = [[[RectangleView alloc] initWithFrame:CGRectMake(150, 230, 100, 100)] autorelease];
-    DLog(@"solidView: %@", solidView);
-    //solidView.backgroundColor = [UIColor redColor];
-    [self.window addSubview:solidView];
-}
 
 @end
