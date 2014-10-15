@@ -22,17 +22,13 @@
     CircleView *circleView = [[[CircleView alloc] initWithFrame:CGRectMake((screenBounds.size.width - kCircleSize) / 2, (screenBounds.size.height - kCircleSize) / 2.0, kCircleSize, kCircleSize)] autorelease];
     [self.window addSubview:circleView];
     
-    //[NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(addSolidView:) userInfo:nil repeats:NO];
     [self.window makeKeyAndVisible];
-    //DLog();
-//    CircleView* solidView2 = [[[CircleView alloc] initWithFrame:CGRectMake(0, 0, 1, 1)] autorelease];
-//    [solidView addSubview:solidView2];
     return YES;
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
-    DLog();
+    //DLog();
 }
 
 - (void)dealloc

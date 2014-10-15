@@ -21,7 +21,6 @@
 
     RectangleView *solidView = [[[RectangleView alloc] initWithFrame:CGRectMake(0, 40, 170, 150)] autorelease];
     //DLog(@"solidView: %@", solidView);
-    //solidView.backgroundColor = [UIColor redColor];
     [self.window addSubview:solidView];
     
     [self.window makeKeyAndVisible];

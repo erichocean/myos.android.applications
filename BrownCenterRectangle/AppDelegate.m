@@ -22,16 +22,8 @@
     
     CGRect screenBounds = [[UIScreen mainScreen] bounds];
     RectangleView *rectangleView = [[[RectangleView alloc] initWithFrame:CGRectMake((screenBounds.size.width - kRectangleWidth) / 2, (screenBounds.size.height - kRectangleHeight) / 2.0, kRectangleWidth, kRectangleHeight)] autorelease];
-    
-    //DLog(@"solidView: %@", solidView);
-    //solidView.backgroundColor = [UIColor redColor];
     [self.window addSubview:rectangleView];
-    
-    //[NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(addSolidView:) userInfo:nil repeats:NO];
     [self.window makeKeyAndVisible];
-    //DLog();
-//    RectangleView* solidView2 = [[[RectangleView alloc] initWithFrame:CGRectMake(0, 0, 1, 1)] autorelease];
-//    [solidView addSubview:solidView2];
     return YES;
 }
 

@@ -34,7 +34,7 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
-    DLog();
+    //DLog();
 }
 
 - (void)dealloc
