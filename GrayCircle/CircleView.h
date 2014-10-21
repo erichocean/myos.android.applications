@@ -5,6 +5,8 @@
 
 #import <UIKit/UIKit.h>
 
+#define kCircleSize     170
+
 @interface CircleView : UIView
 
 @end
