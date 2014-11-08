@@ -13,6 +13,10 @@
 		4CA2BEAE18EF67CD007A0542 /* ColorSpace */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ColorSpace; sourceTree = "<group>"; };
 		C52A7B6418F3A7E5005E9FE5 /* Gradients */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Gradients; sourceTree = "<group>"; };
 		C5B8DD4819313E5C003B22FE /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
+		F526894E1A0D928200CBCD05 /* CyanCenterCircle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CyanCenterCircle; sourceTree = "<group>"; };
+		F526894F1A0D928200CBCD05 /* CyanCenterRectangle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CyanCenterRectangle; sourceTree = "<group>"; };
+		F52689501A0D928200CBCD05 /* CyanRectangle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CyanRectangle; sourceTree = "<group>"; };
+		F52689511A0D92B300CBCD05 /* CyanCircle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CyanCircle; sourceTree = "<group>"; };
 		F526F7B519B6753300A32D8E /* BlueCenterCircle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BlueCenterCircle; sourceTree = "<group>"; };
 		F526F7B619B6753300A32D8E /* BlueCenterRectangle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BlueCenterRectangle; sourceTree = "<group>"; };
 		F526F7B719B6753300A32D8E /* BlueCircle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BlueCircle; sourceTree = "<group>"; };
@@ -29,10 +33,6 @@
 		F526F7C619B6753400A32D8E /* GreenCenterRectangle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GreenCenterRectangle; sourceTree = "<group>"; };
 		F526F7C719B6753400A32D8E /* GreenCircle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GreenCircle; sourceTree = "<group>"; };
 		F526F7C819B6753400A32D8E /* GreenRectangle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GreenRectangle; sourceTree = "<group>"; };
-		F526F7CA19B6753400A32D8E /* LightBlueCenterCircle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = LightBlueCenterCircle; sourceTree = "<group>"; };
-		F526F7CB19B6753400A32D8E /* LightBlueCenterRectangle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = LightBlueCenterRectangle; sourceTree = "<group>"; };
-		F526F7CC19B6753400A32D8E /* LightBlueCircle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = LightBlueCircle; sourceTree = "<group>"; };
-		F526F7CD19B6753400A32D8E /* LightBlueRectangle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = LightBlueRectangle; sourceTree = "<group>"; };
 		F526F7CF19B6753400A32D8E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		F526F7D019B6753400A32D8E /* RedCenterCircle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = RedCenterCircle; sourceTree = "<group>"; };
 		F526F7D119B6753400A32D8E /* RedCenterRectangle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = RedCenterRectangle; sourceTree = "<group>"; };
@@ -55,6 +55,10 @@
 				F526F7BA19B6753300A32D8E /* BrownCenterRectangle */,
 				F526F7BB19B6753300A32D8E /* BrownCircle */,
 				F526F7BC19B6753300A32D8E /* BrownRectangle */,
+				F526894E1A0D928200CBCD05 /* CyanCenterCircle */,
+				F526894F1A0D928200CBCD05 /* CyanCenterRectangle */,
+				F52689511A0D92B300CBCD05 /* CyanCircle */,
+				F52689501A0D928200CBCD05 /* CyanRectangle */,
 				F526F7C119B6753400A32D8E /* GrayCenterCircle */,
 				F526F7C219B6753400A32D8E /* GrayCenterRectangle */,
 				F526F7C319B6753400A32D8E /* GrayCircle */,
@@ -63,10 +67,6 @@
 				F526F7C619B6753400A32D8E /* GreenCenterRectangle */,
 				F526F7C719B6753400A32D8E /* GreenCircle */,
 				F526F7C819B6753400A32D8E /* GreenRectangle */,
-				F526F7CA19B6753400A32D8E /* LightBlueCenterCircle */,
-				F526F7CB19B6753400A32D8E /* LightBlueCenterRectangle */,
-				F526F7CC19B6753400A32D8E /* LightBlueCircle */,
-				F526F7CD19B6753400A32D8E /* LightBlueRectangle */,
 				F526F7CF19B6753400A32D8E /* README.md */,
 				F526F7D019B6753400A32D8E /* RedCenterCircle */,
 				F526F7D119B6753400A32D8E /* RedCenterRectangle */,

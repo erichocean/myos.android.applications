@@ -2,12 +2,12 @@
 # Copyright 2014 myOS Group. All rights reserved.
 #
 
-APP_NAME=LightBlueCenterRectangle
+APP_NAME=CyanCircle
 CFLAGS=-DDEBUG -fblocks
 LDLIBS= -llog -lCoreFoundation -lFoundation -lOpenGLES -lUIKit
 OBJECTS = \
     main.o \
     AppDelegate.o \
-    RectangleView.o \
+    CircleView.o \
 
 include ${MYOS_PATH}/android/sdk/resources/makefile-executable
